@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="NavigationPage Pop White Screen Bug"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="20"
+                HorizontalOptions="Center" />
+
+            <VerticalStackLayout Spacing="6">
+                <Label
+                Text="1. Press 'Push New Page'"
+                FontSize="14"
+                HorizontalOptions="Center" />
+
+                <Label
+                    Text="2. Background (deactivate) the app"
+                    FontSize="14"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Text="3. Resume the app"
+                    FontSize="14"
+                    HorizontalOptions="Center" />
+                
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Spacing="10">
+                <Label
+                    Text="Expect: Pushed page to be popped, this screen will show on resume"
+                    FontSize="14"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Text="Actual: Code hangs on Navigation.Pop(), screen is white"
+                    FontSize="14"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <Button
+                Text="Push New Page"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="PushPage"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
